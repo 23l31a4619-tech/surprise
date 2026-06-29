@@ -1,0 +1,348 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff9ec4,#ffd6e7,#ffeef5);
+}
+
+/* ===========================
+   COMMON
+=========================== */
+
+.page{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hidden{
+    display:none;
+}
+
+/* ===========================
+   WELCOME PAGE
+=========================== */
+
+#welcomePage{
+    background:linear-gradient(135deg,#ff8dc7,#ffc6dd,#fff2f7);
+}
+
+.welcome-content{
+    text-align:center;
+    padding:30px;
+}
+
+.welcome-content h1{
+    font-size:55px;
+    color:white;
+    text-shadow:0 6px 20px rgba(0,0,0,.25);
+    margin-bottom:40px;
+}
+
+#startBtn{
+    padding:18px 55px;
+    font-size:24px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    color:white;
+    background:#ff4f93;
+    transition:.35s;
+    box-shadow:0 12px 30px rgba(255,79,147,.45);
+}
+
+#startBtn:hover{
+    transform:scale(1.08);
+    background:#ff2f80;
+}
+
+/* ===========================
+   PHOTO BOOK
+=========================== */
+
+#bookSection{
+    width:100%;
+    height:100vh;
+    background:#111;
+    position:relative;
+    overflow:hidden;
+}
+
+#book{
+    width:100%;
+    height:100%;
+    position:relative;
+    perspective:1800px;
+}
+
+/* ===========================
+   PHOTO PAGE
+=========================== */
+
+.photo-page{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    top:0;
+    left:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    background:black;
+
+    transform-origin:left center;
+
+    transition:transform .9s ease,opacity .9s ease;
+
+}
+
+.photo-page.active{
+    display:flex;
+    opacity:1;
+    transform:rotateY(0deg);
+}
+
+.photo-page.turn{
+
+    transform:rotateY(-90deg);
+
+    opacity:0;
+
+}
+
+.photo-page img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    background:black;
+
+}
+
+/* ===========================
+   NEXT BUTTON
+=========================== */
+
+.next-btn,
+#finishBtn{
+
+    position:absolute;
+
+    bottom:35px;
+    right:35px;
+
+    padding:15px 35px;
+
+    font-size:18px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:#ff4d88;
+
+    box-shadow:0 8px 20px rgba(255,0,90,.45);
+
+    transition:.3s;
+
+}
+
+.next-btn:hover,
+#finishBtn:hover{
+
+    transform:translateY(-3px);
+
+    background:#ff266f;
+
+}
+
+/* ===========================
+   FINAL PAGE
+=========================== */
+
+#finalPage{
+
+    background:linear-gradient(135deg,#ff8ab5,#ffd8e8,#fff5fa);
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.final-content{
+
+    animation:fadeUp 1.4s;
+
+    padding:25px;
+
+}
+
+.final-content h1{
+
+    font-size:60px;
+
+    margin-bottom:25px;
+
+    text-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.final-content h2{
+
+    font-size:46px;
+
+    margin-bottom:25px;
+
+}
+
+.final-content p{
+
+    max-width:700px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    margin:auto;
+
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.welcome-content h1{
+
+    font-size:34px;
+
+}
+
+#startBtn{
+
+    width:220px;
+
+    font-size:20px;
+
+    padding:16px;
+
+}
+
+.next-btn,
+#finishBtn{
+
+    right:18px;
+
+    bottom:20px;
+
+    padding:12px 28px;
+
+    font-size:16px;
+
+}
+
+.photo-page img{
+
+    width:100vw;
+
+    height:100vh;
+
+    object-fit:contain;
+
+}
+
+.final-content h1{
+
+    font-size:34px;
+
+}
+
+.final-content h2{
+
+    font-size:28px;
+
+}
+
+.final-content p{
+
+    font-size:18px;
+
+    padding:0 15px;
+
+}
+
+}
+
+/* ===========================
+   LARGE SCREENS
+=========================== */
+
+@media(min-width:1200px){
+
+.photo-page img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+}
